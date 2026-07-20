@@ -1,5 +1,7 @@
 from datetime import timedelta
 
+from psycopg2.errors import UniqueViolation
+
 from odoo import fields
 from odoo.addons.mail.tests.common import mail_new_test_user
 from odoo.exceptions import AccessError
@@ -47,6 +49,24 @@ class TestFactoryCrmFollowup(TransactionCase):
         self.lead.manual_grade = "d"
         self.assertEqual(self.lead.automatic_grade, "a")
         self.assertEqual(self.lead.customer_grade, "d")
+
+    def test_legacy_purchase_fields_preserve_source_data(self):
+        legacy = self.env["crm.lead"].create(
+            {
+                "name": "Legacy buyer",
+                "legacy_import_key": "wutong-2",
+                "legacy_buyer_nickname": "买家甲",
+                "legacy_shipping_phone": "13800000001",
+                "legacy_first_purchase_date": "2024-09-24 16:34:00",
+                "legacy_latest_purchase_date": "2022-07-18 03:10:29",
+                "legacy_purchase_count": 1,
+                "legacy_total_purchase_amount": 177,
+            }
+        )
+        self.assertGreater(legacy.legacy_first_purchase_date, legacy.legacy_latest_purchase_date)
+        self.assertEqual(legacy.legacy_total_purchase_amount, 177)
+        with self.assertRaises(UniqueViolation), self.cr.savepoint():
+            legacy.copy({"legacy_import_key": "wutong-2"})
 
     def test_followup_trace_updates_lead(self):
         today = fields.Date.context_today(self.lead)

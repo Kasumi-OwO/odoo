@@ -563,3 +563,91 @@ msgstr "已加微信建立联系"
 #: model:crm.stage,name:factory_crm_followup.stage_won
 msgid "Won"
 msgstr "已成交"
+
+#. module: factory_crm_followup
+msgid "Historical Purchase Data"
+msgstr "历史采购数据"
+
+#. module: factory_crm_followup
+msgid "Buyer Information"
+msgstr "买家信息"
+
+#. module: factory_crm_followup
+msgid "Purchase Summary"
+msgstr "采购汇总"
+
+#. module: factory_crm_followup
+msgid "Legacy Follow-up Information"
+msgstr "原系统跟进信息"
+
+#. module: factory_crm_followup
+msgid "Legacy Import Key"
+msgstr "历史数据导入标识"
+
+#. module: factory_crm_followup
+msgid "Buyer Nickname"
+msgstr "买家昵称"
+
+#. module: factory_crm_followup
+msgid "Shipping Address Phone"
+msgstr "收货地址电话"
+
+#. module: factory_crm_followup
+msgid "Buyer Identity"
+msgstr "买家身份"
+
+#. module: factory_crm_followup
+msgid "Buyer Level"
+msgstr "买家等级"
+
+#. module: factory_crm_followup
+msgid "Province"
+msgstr "所在地-省份"
+
+#. module: factory_crm_followup
+msgid "Legacy City"
+msgstr "所在地-城市"
+
+#. module: factory_crm_followup
+msgid "First Purchase Date"
+msgstr "首次采购日期"
+
+#. module: factory_crm_followup
+msgid "Latest Purchase Date"
+msgstr "最近采购日期"
+
+#. module: factory_crm_followup
+msgid "Days Since Last Purchase"
+msgstr "距上次采购（天）"
+
+#. module: factory_crm_followup
+msgid "Purchase Count"
+msgstr "采购次数"
+
+#. module: factory_crm_followup
+msgid "Cumulative Purchase Amount"
+msgstr "累计采购金额（元）"
+
+#. module: factory_crm_followup
+msgid "First Order Ad-driven"
+msgstr "首单是否广告引导"
+
+#. module: factory_crm_followup
+msgid "Legacy Contact Name"
+msgstr "联系名称"
+
+#. module: factory_crm_followup
+msgid "Legacy Contact Details"
+msgstr "联系方式"
+
+#. module: factory_crm_followup
+msgid "Importance Level"
+msgstr "重要等级"
+
+#. module: factory_crm_followup
+msgid "Follow-up Method"
+msgstr "跟进方式"
+
+#. module: factory_crm_followup
+msgid "Buyer Demand"
+msgstr "买家需求"

@@ -119,6 +119,37 @@ class CrmLead(models.Model):
         string="Repeat Customers", compute="_compute_dashboard_indicators", store=True
     )
 
+    # Historical customer data imported from the legacy Wutong CRM export.  Keep
+    # these values separate from the live sales fields: the source workbook can
+    # contain contradictory dates and duplicate names or phone numbers, so an
+    # import must preserve each original row without guessing or merging.
+    legacy_import_key = fields.Char(string="Legacy Import Key", copy=False, readonly=True)
+    legacy_buyer_nickname = fields.Char(string="Buyer Nickname", index=True)
+    legacy_shipping_phone = fields.Char(string="Shipping Address Phone", index=True)
+    legacy_buyer_identity = fields.Char(string="Buyer Identity")
+    legacy_buyer_level = fields.Char(string="Buyer Level", index=True)
+    legacy_province = fields.Char(string="Province")
+    legacy_city = fields.Char(string="Legacy City")
+    legacy_first_purchase_date = fields.Datetime(string="First Purchase Date")
+    legacy_latest_purchase_date = fields.Datetime(string="Latest Purchase Date", index=True)
+    legacy_days_since_purchase = fields.Integer(string="Days Since Last Purchase")
+    legacy_purchase_count = fields.Integer(string="Purchase Count", aggregator="sum")
+    legacy_total_purchase_amount = fields.Monetary(
+        string="Cumulative Purchase Amount",
+        currency_field="company_currency",
+        aggregator="sum",
+    )
+    legacy_first_order_ad_driven = fields.Boolean(string="First Order Ad-driven")
+    legacy_contact_name = fields.Char(string="Legacy Contact Name")
+    legacy_contact_details = fields.Char(string="Legacy Contact Details")
+    legacy_importance_level = fields.Char(string="Importance Level")
+    legacy_followup_method = fields.Char(string="Follow-up Method")
+    legacy_buyer_demand = fields.Text(string="Buyer Demand")
+
+    _legacy_import_key_unique = models.UniqueIndex(
+        "(legacy_import_key) WHERE legacy_import_key IS NOT NULL"
+    )
+
     @api.depends(
         "asked_price",
         "asked_sample",

@@ -19,6 +19,8 @@ upgraded without patching core Odoo files.
 - Native Odoo import/export and chatter attachments remain available.
 - Native CRM record rules keep salespeople on their own/unassigned customers while
   sales managers retain company-wide access.
+- All 17 columns from the Wutong CRM historical-customer export are preserved in a
+  dedicated purchase-history page. The source row key makes repeat imports safe.
 
 ## Install or upgrade
 
@@ -31,6 +33,21 @@ Back up the database first, then run against the intended database:
 
 Use `-i` for the initial installation and `-u` after deploying a newer revision.
 Do not run these commands against an unidentified database.
+
+## Historical customer import
+
+Convert the XLSX locally, then run the generated CSV through an Odoo shell:
+
+```bash
+python addons/factory_crm_followup/scripts/prepare_legacy_customers.py SOURCE.xlsx customers.csv
+LEGACY_CRM_CSV=/absolute/path/customers.csv \
+  python odoo-bin shell -c odoo.conf -d DATABASE \
+  < addons/factory_crm_followup/scripts/import_legacy_customers.py
+```
+
+The importer preserves duplicate names, duplicate phone numbers and contradictory
+purchase dates exactly as exported. It maps nickname, phone and city to the live
+CRM search fields without merging source rows.
 
 ## Intentional first-version limits
 

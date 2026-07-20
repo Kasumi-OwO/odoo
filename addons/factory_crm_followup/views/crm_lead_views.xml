@@ -80,6 +80,38 @@
                         </list>
                     </field>
                 </page>
+                <page name="legacy_purchase_history" string="Historical Purchase Data">
+                    <group>
+                        <group string="Buyer Information">
+                            <field name="legacy_buyer_nickname"/>
+                            <field name="legacy_shipping_phone" widget="phone"/>
+                            <field name="legacy_buyer_identity"/>
+                            <field name="legacy_buyer_level"/>
+                            <field name="legacy_province"/>
+                            <field name="legacy_city"/>
+                        </group>
+                        <group string="Purchase Summary">
+                            <field name="legacy_first_purchase_date"/>
+                            <field name="legacy_latest_purchase_date"/>
+                            <field name="legacy_days_since_purchase"/>
+                            <field name="legacy_purchase_count"/>
+                            <field name="legacy_total_purchase_amount"/>
+                            <field name="legacy_first_order_ad_driven"/>
+                        </group>
+                    </group>
+                    <group string="Legacy Follow-up Information">
+                        <group>
+                            <field name="legacy_contact_name"/>
+                            <field name="legacy_contact_details"/>
+                            <field name="legacy_importance_level"/>
+                            <field name="legacy_followup_method"/>
+                        </group>
+                        <group>
+                            <field name="legacy_buyer_demand"/>
+                            <field name="legacy_import_key" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
@@ -96,6 +128,10 @@
                 <field name="last_followup_date" optional="show"/>
                 <field name="next_followup_date" optional="show"/>
                 <field name="is_dormant" optional="show"/>
+                <field name="legacy_buyer_level" optional="hide"/>
+                <field name="legacy_purchase_count" optional="hide"/>
+                <field name="legacy_total_purchase_amount" optional="hide"/>
+                <field name="legacy_latest_purchase_date" optional="hide"/>
             </field>
         </field>
     </record>
@@ -111,6 +147,10 @@
                 <field name="customer_grade" widget="badge" optional="show"/>
                 <field name="next_followup_date" optional="show"/>
                 <field name="is_dormant" optional="show"/>
+                <field name="legacy_buyer_level" optional="hide"/>
+                <field name="legacy_purchase_count" optional="hide"/>
+                <field name="legacy_total_purchase_amount" optional="hide"/>
+                <field name="legacy_latest_purchase_date" optional="hide"/>
             </field>
         </field>
     </record>
@@ -124,6 +164,12 @@
                 <field name="factory_source"/>
                 <field name="customer_type"/>
                 <field name="customer_grade"/>
+                <field name="legacy_buyer_nickname"/>
+                <field name="legacy_shipping_phone"/>
+                <field name="legacy_buyer_identity"/>
+                <field name="legacy_buyer_level"/>
+                <field name="legacy_province"/>
+                <field name="legacy_city"/>
             </field>
             <filter name="lost" position="before">
                 <filter name="factory_overdue" string="Follow-up Overdue" domain="[('is_followup_overdue', '=', True)]"/>

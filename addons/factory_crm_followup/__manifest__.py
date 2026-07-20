@@ -1,6 +1,6 @@
 {
     "name": "Factory CRM Follow-up",
-    "version": "19.5.1.0.0",
+    "version": "19.5.1.1.0",
     "category": "Sales/CRM",
     "summary": "Customer grading, traceable follow-ups and factory sales reminders",
     "author": "Kasumi",
