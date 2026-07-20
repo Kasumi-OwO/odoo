@@ -9,245 +9,326 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. module: factory_crm_followup
 msgid "Factory CRM Follow-up"
 msgstr "工厂客户跟进系统"
 
+#. module: factory_crm_followup
 msgid "Factory Lead Source"
 msgstr "线索来源"
 
+#. module: factory_crm_followup
 msgid "AI Prospecting"
 msgstr "AI拓客"
 
+#. module: factory_crm_followup
 msgid "1688 Inquiry"
 msgstr "1688询盘"
 
+#. module: factory_crm_followup
 msgid "Exhibition"
 msgstr "展会"
 
+#. module: factory_crm_followup
 msgid "Existing Customer Referral"
 msgstr "老客介绍"
 
+#. module: factory_crm_followup
 msgid "Other"
 msgstr "其他"
 
+#. module: factory_crm_followup
 msgid "Customer Type"
 msgstr "客户类型"
 
+#. module: factory_crm_followup
 msgid "Gift Company"
 msgstr "礼品公司"
 
+#. module: factory_crm_followup
 msgid "Outdoor Wholesaler"
 msgstr "户外批发商"
 
+#. module: factory_crm_followup
 msgid "E-commerce Seller"
 msgstr "电商卖家"
 
+#. module: factory_crm_followup
 msgid "Scenic Area / Project"
 msgstr "景区工程"
 
+#. module: factory_crm_followup
 msgid "Individual Retail"
 msgstr "个人散户"
 
+#. module: factory_crm_followup
 msgid "WeChat"
 msgstr "微信"
 
+#. module: factory_crm_followup
 msgid "Needs Logo Customization"
 msgstr "需要LOGO定制"
 
+#. module: factory_crm_followup
 msgid "Estimated Purchase Quantity"
 msgstr "预估采购量"
 
+#. module: factory_crm_followup
 msgid "Purchase Cycle"
 msgstr "采购周期"
 
+#. module: factory_crm_followup
 msgid "Current Supplier"
 msgstr "当前合作供应商"
 
+#. module: factory_crm_followup
 msgid "Customer Concerns"
 msgstr "客户顾虑"
 
+#. module: factory_crm_followup
 msgid "Asked About Price"
 msgstr "询问价格"
 
+#. module: factory_crm_followup
 msgid "Asked About Sample"
 msgstr "询问样品"
 
+#. module: factory_crm_followup
 msgid "Asked About Logo"
 msgstr "询问LOGO"
 
+#. module: factory_crm_followup
 msgid "Asked About Delivery"
 msgstr "询问交期"
 
+#. module: factory_crm_followup
 msgid "Discussed Quantity"
 msgstr "讨论采购数量"
 
+#. module: factory_crm_followup
 msgid "Recent Purchase Plan"
 msgstr "近期有采购计划"
 
+#. module: factory_crm_followup
 msgid "Industry Match"
 msgstr "行业对口"
 
+#. module: factory_crm_followup
 msgid "Only Comparing Price"
 msgstr "仅比价"
 
+#. module: factory_crm_followup
 msgid "Cold Response"
 msgstr "回复冷淡"
 
+#. module: factory_crm_followup
 msgid "Invalid / Irrelevant Customer"
 msgstr "无效或无关客户"
 
+#. module: factory_crm_followup
 msgid "A - High Intent"
 msgstr "A类 - 高意向"
 
+#. module: factory_crm_followup
 msgid "B - Potential"
 msgstr "B类 - 潜在"
 
+#. module: factory_crm_followup
 msgid "C - Price Comparison"
 msgstr "C类 - 比价"
 
+#. module: factory_crm_followup
 msgid "D - Invalid"
 msgstr "D类 - 无效"
 
+#. module: factory_crm_followup
 msgid "Automatic Grade"
 msgstr "自动分级"
 
+#. module: factory_crm_followup
 msgid "Manual Grade Override"
 msgstr "人工调整分级"
 
+#. module: factory_crm_followup
 msgid "Customer Grade"
 msgstr "客户分级"
 
+#. module: factory_crm_followup
 msgid "Recommended Follow-up Interval"
 msgstr "建议跟进间隔（天）"
 
+#. module: factory_crm_followup
 msgid "Follow-up Records"
 msgstr "跟进记录"
 
+#. module: factory_crm_followup
 msgid "Last Follow-up"
 msgstr "最后跟进日期"
 
+#. module: factory_crm_followup
 msgid "Next Follow-up"
 msgstr "下次跟进日期"
 
+#. module: factory_crm_followup
 msgid "Follow-up Overdue"
 msgstr "跟进已逾期"
 
+#. module: factory_crm_followup
 msgid "Profile Complete"
 msgstr "资料完整"
 
+#. module: factory_crm_followup
 msgid "Dormant Customer"
 msgstr "沉睡客户"
 
+#. module: factory_crm_followup
 msgid "Dormant Since"
 msgstr "沉睡起始日期"
 
+#. module: factory_crm_followup
 msgid "Next Repurchase Visit"
 msgstr "下次复购回访"
 
+#. module: factory_crm_followup
 msgid "Sample Sent"
 msgstr "已寄样"
 
+#. module: factory_crm_followup
 msgid "Sample Tracking Number"
 msgstr "样品单号"
 
+#. module: factory_crm_followup
 msgid "Sample Converted"
 msgstr "样品已转化"
 
+#. module: factory_crm_followup
 msgid "Repeat Customer"
 msgstr "复购客户"
 
+#. module: factory_crm_followup
 msgid "Customer / Lead"
 msgstr "客户/线索"
 
+#. module: factory_crm_followup
 msgid "Salesperson"
 msgstr "销售员"
 
+#. module: factory_crm_followup
 msgid "Communication Date"
 msgstr "沟通日期"
 
+#. module: factory_crm_followup
 msgid "Communication Content"
 msgstr "沟通内容"
 
+#. module: factory_crm_followup
 msgid "Customer Intent"
 msgstr "客户意向"
 
+#. module: factory_crm_followup
 msgid "Customer Concern"
 msgstr "客户顾虑"
 
+#. module: factory_crm_followup
 msgid "High"
 msgstr "高"
 
+#. module: factory_crm_followup
 msgid "Medium"
 msgstr "中"
 
+#. module: factory_crm_followup
 msgid "Low"
 msgstr "低"
 
+#. module: factory_crm_followup
 msgid "Invalid"
 msgstr "无效"
 
+#. module: factory_crm_followup
 msgid "Customer Follow-ups"
 msgstr "客户跟进"
 
+#. module: factory_crm_followup
 msgid "My Follow-ups"
 msgstr "我的跟进"
 
+#. module: factory_crm_followup
 msgid "Next Follow-up Overdue"
 msgstr "下次跟进已逾期"
 
+#. module: factory_crm_followup
 msgid "Follow-up Analysis"
 msgstr "跟进分析"
 
+#. module: factory_crm_followup
 msgid "Factory Customer Profile"
 msgstr "工厂客户画像"
 
+#. module: factory_crm_followup
 msgid "Required Customer Information"
 msgstr "客户必填信息"
 
+#. module: factory_crm_followup
 msgid "Customer Name"
 msgstr "客户名称"
 
+#. module: factory_crm_followup
 msgid "Purchase Profile"
 msgstr "采购画像"
 
+#. module: factory_crm_followup
 msgid "Intent Signals"
 msgstr "意向判断信号"
 
+#. module: factory_crm_followup
 msgid "Sample and Customer Status"
 msgstr "样品与客户状态"
 
+#. module: factory_crm_followup
 msgid "Follow-up History"
 msgstr "跟进历史"
 
+#. module: factory_crm_followup
 msgid "Incomplete Profile"
 msgstr "资料不完整"
 
+#. module: factory_crm_followup
 msgid "Dormant Customers"
 msgstr "沉睡客户"
 
+#. module: factory_crm_followup
 msgid "Factory Customer Analysis"
 msgstr "工厂客户分析"
 
+#. module: factory_crm_followup
 msgid "New Lead"
 msgstr "新线索入库"
 
+#. module: factory_crm_followup
 msgid "WeChat Connected"
 msgstr "已加微信建立联系"
 
+#. module: factory_crm_followup
 msgid "Quotation Sent"
 msgstr "已发报价资料"
 
+#. module: factory_crm_followup
 msgid "Negotiating"
 msgstr "洽谈成交中"
 
+#. module: factory_crm_followup
 msgid "Won"
 msgstr "已成交"
 
+#. module: factory_crm_followup
 msgid "Customer follow-up overdue"
 msgstr "客户跟进已逾期"
 
+#. module: factory_crm_followup
 msgid "Complete new customer profile"
 msgstr "完善新客户资料"
 
+#. module: factory_crm_followup
 msgid "Customer repurchase visit"
 msgstr "客户复购回访"
