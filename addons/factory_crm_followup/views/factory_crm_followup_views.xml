@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="factory_crm_followup_view_list" model="ir.ui.view">
+        <field name="name">factory.crm.followup.list</field>
+        <field name="model">factory.crm.followup</field>
+        <field name="arch" type="xml">
+            <list string="Customer Follow-ups" create="1" edit="1" delete="0"
+                  decoration-danger="next_followup_date &lt; context_today().strftime('%Y-%m-%d')">
+                <field name="followup_date"/>
+                <field name="lead_id"/>
+                <field name="user_id" widget="many2one_avatar_user"/>
+                <field name="customer_intent" widget="badge"
+                       decoration-success="customer_intent == 'high'"
+                       decoration-warning="customer_intent == 'medium'"
+                       decoration-danger="customer_intent == 'invalid'"/>
+                <field name="communication_content" optional="show"/>
+                <field name="customer_concern" optional="show"/>
+                <field name="next_followup_date"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="factory_crm_followup_view_form" model="ir.ui.view">
+        <field name="name">factory.crm.followup.form</field>
+        <field name="model">factory.crm.followup</field>
+        <field name="arch" type="xml">
+            <form string="Customer Follow-up">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="lead_id"/>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="followup_date"/>
+                        </group>
+                        <group>
+                            <field name="customer_intent"/>
+                            <field name="next_followup_date"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="communication_content"/>
+                        <field name="customer_concern"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="factory_crm_followup_view_search" model="ir.ui.view">
+        <field name="name">factory.crm.followup.search</field>
+        <field name="model">factory.crm.followup</field>
+        <field name="arch" type="xml">
+            <search string="Customer Follow-ups">
+                <field name="lead_id"/>
+                <field name="user_id"/>
+                <field name="followup_date"/>
+                <filter name="my_followups" string="My Follow-ups" domain="[('user_id', '=', uid)]"/>
+                <filter name="overdue" string="Next Follow-up Overdue" domain="[('next_followup_date', '&lt;', 'today')]"/>
+                <group>
+                    <filter name="group_salesperson" string="Salesperson" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_intent" string="Customer Intent" context="{'group_by': 'customer_intent'}"/>
+                    <filter name="group_day" string="Communication Date" context="{'group_by': 'followup_date:day'}"/>
+                    <filter name="group_week" string="Communication Week" context="{'group_by': 'followup_date:week'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="factory_crm_followup_view_pivot" model="ir.ui.view">
+        <field name="name">factory.crm.followup.pivot</field>
+        <field name="model">factory.crm.followup</field>
+        <field name="arch" type="xml">
+            <pivot string="Follow-up Analysis" sample="1">
+                <field name="user_id" type="row"/>
+                <field name="followup_date" interval="week" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="factory_crm_followup_view_graph" model="ir.ui.view">
+        <field name="name">factory.crm.followup.graph</field>
+        <field name="model">factory.crm.followup</field>
+        <field name="arch" type="xml">
+            <graph string="Follow-up Analysis" type="bar" sample="1">
+                <field name="followup_date" interval="day"/>
+                <field name="user_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="factory_crm_followup_action" model="ir.actions.act_window">
+        <field name="name">Customer Follow-ups</field>
+        <field name="res_model">factory.crm.followup</field>
+        <field name="view_mode">list,pivot,graph,form</field>
+        <field name="search_view_id" ref="factory_crm_followup_view_search"/>
+        <field name="context">{'search_default_my_followups': 1}</field>
+    </record>
+
+    <menuitem id="factory_crm_followup_menu"
+              name="Customer Follow-ups"
+              parent="crm.crm_menu_sales"
+              action="factory_crm_followup_action"
+              sequence="3"
+              groups="sales_team.group_sale_salesman"/>
+</odoo>

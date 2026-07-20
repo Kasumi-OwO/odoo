@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_factory_followup" model="ir.ui.view">
+        <field name="name">crm.lead.form.factory.followup</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="customer_grade" widget="badge" readonly="1"
+                       decoration-success="customer_grade == 'a'"
+                       decoration-info="customer_grade == 'b'"
+                       decoration-warning="customer_grade == 'c'"
+                       decoration-danger="customer_grade == 'd'"/>
+                <field name="next_followup_date" readonly="1"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="factory_customer_profile" string="Factory Customer Profile">
+                    <group>
+                        <group string="Required Customer Information">
+                            <field name="partner_name" string="Customer Name" required="1"/>
+                            <field name="contact_name" required="1"/>
+                            <field name="phone" required="1" widget="phone"/>
+                            <field name="wechat" required="1"/>
+                            <field name="factory_source" required="1"/>
+                            <field name="customer_type" required="1"/>
+                            <field name="profile_complete" readonly="1"/>
+                        </group>
+                        <group string="Purchase Profile">
+                            <field name="logo_customization"/>
+                            <field name="estimated_quantity"/>
+                            <field name="purchase_cycle"/>
+                            <field name="current_supplier"/>
+                            <field name="customer_concerns"/>
+                            <field name="next_repurchase_date"/>
+                            <field name="is_repeat_customer"/>
+                        </group>
+                    </group>
+                    <group string="Intent Signals">
+                        <group>
+                            <field name="asked_price"/>
+                            <field name="asked_sample"/>
+                            <field name="asked_logo"/>
+                            <field name="asked_delivery"/>
+                            <field name="asked_quantity"/>
+                            <field name="recent_purchase_plan"/>
+                        </group>
+                        <group>
+                            <field name="industry_match"/>
+                            <field name="price_only"/>
+                            <field name="cold_response"/>
+                            <field name="invalid_customer"/>
+                            <field name="automatic_grade" readonly="1"/>
+                            <field name="manual_grade"/>
+                            <field name="followup_interval_days" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Sample and Customer Status">
+                        <group>
+                            <field name="sample_sent"/>
+                            <field name="sample_tracking_number" invisible="not sample_sent" required="sample_sent"/>
+                            <field name="sample_converted" invisible="not sample_sent"/>
+                        </group>
+                        <group>
+                            <field name="last_followup_date" readonly="1"/>
+                            <field name="is_followup_overdue" readonly="1"/>
+                            <field name="is_dormant" readonly="1"/>
+                            <field name="dormant_date" invisible="not is_dormant"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="factory_followup_history" string="Follow-up History">
+                    <field name="followup_ids" context="{'default_lead_id': id}">
+                        <list editable="bottom" delete="0">
+                            <field name="followup_date"/>
+                            <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="communication_content"/>
+                            <field name="customer_intent"/>
+                            <field name="customer_concern"/>
+                            <field name="next_followup_date"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_lead_view_list_factory_followup" model="ir.ui.view">
+        <field name="name">crm.lead.list.factory.followup</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="source_id" position="after">
+                <field name="factory_source" optional="show"/>
+                <field name="customer_type" optional="show"/>
+                <field name="customer_grade" widget="badge" optional="show"/>
+                <field name="last_followup_date" optional="show"/>
+                <field name="next_followup_date" optional="show"/>
+                <field name="is_dormant" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_opportunity_view_list_factory_followup" model="ir.ui.view">
+        <field name="name">crm.opportunity.list.factory.followup</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="after">
+                <field name="factory_source" optional="show"/>
+                <field name="customer_type" optional="show"/>
+                <field name="customer_grade" widget="badge" optional="show"/>
+                <field name="next_followup_date" optional="show"/>
+                <field name="is_dormant" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="crm_lead_search_factory_followup" model="ir.ui.view">
+        <field name="name">crm.lead.search.factory.followup</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <field name="source_id" position="after">
+                <field name="factory_source"/>
+                <field name="customer_type"/>
+                <field name="customer_grade"/>
+            </field>
+            <filter name="lost" position="before">
+                <filter name="factory_overdue" string="Follow-up Overdue" domain="[('is_followup_overdue', '=', True)]"/>
+                <filter name="factory_dormant" string="Dormant Customers" domain="[('is_dormant', '=', True)]"/>
+                <filter name="factory_incomplete" string="Incomplete Profile" domain="[('profile_complete', '=', False)]"/>
+            </filter>
+            <filter name="salesperson" position="after">
+                <filter name="factory_source_group" string="Factory Lead Source" context="{'group_by': 'factory_source'}"/>
+                <filter name="customer_grade_group" string="Customer Grade" context="{'group_by': 'customer_grade'}"/>
+                <filter name="customer_type_group" string="Customer Type" context="{'group_by': 'customer_type'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="crm_opportunity_search_factory_followup" model="ir.ui.view">
+        <field name="name">crm.opportunity.search.factory.followup</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="factory_source"/>
+                <field name="customer_type"/>
+                <field name="customer_grade"/>
+            </field>
+            <filter name="filter_won_status_won" position="before">
+                <filter name="factory_overdue" string="Follow-up Overdue" domain="[('is_followup_overdue', '=', True)]"/>
+                <filter name="factory_dormant" string="Dormant Customers" domain="[('is_dormant', '=', True)]"/>
+                <filter name="factory_incomplete" string="Incomplete Profile" domain="[('profile_complete', '=', False)]"/>
+            </filter>
+            <filter name="salesperson" position="after">
+                <filter name="factory_source_group" string="Factory Lead Source" context="{'group_by': 'factory_source'}"/>
+                <filter name="customer_grade_group" string="Customer Grade" context="{'group_by': 'customer_grade'}"/>
+                <filter name="customer_type_group" string="Customer Type" context="{'group_by': 'customer_type'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="factory_crm_lead_analysis_pivot" model="ir.ui.view">
+        <field name="name">crm.lead.factory.analysis.pivot</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <pivot string="Factory Customer Analysis" sample="1">
+                <field name="factory_source" type="row"/>
+                <field name="customer_grade" type="col"/>
+                <field name="validity_rate" type="measure" widget="percentage"/>
+                <field name="conversion_rate" type="measure" widget="percentage"/>
+                <field name="followup_count" type="measure"/>
+                <field name="sample_sent_count" type="measure"/>
+                <field name="sample_conversion_rate" type="measure" widget="percentage"/>
+                <field name="repeat_customer_count" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="factory_crm_lead_analysis_graph" model="ir.ui.view">
+        <field name="name">crm.lead.factory.analysis.graph</field>
+        <field name="model">crm.lead</field>
+        <field name="arch" type="xml">
+            <graph string="Factory Customer Analysis" type="bar" sample="1">
+                <field name="factory_source"/>
+                <field name="customer_grade"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="factory_crm_lead_analysis_action" model="ir.actions.act_window">
+        <field name="name">Factory Customer Analysis</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <menuitem id="factory_crm_lead_analysis_menu"
+              name="Factory Customer Analysis"
+              parent="crm.crm_menu_report"
+              action="factory_crm_lead_analysis_action"
+              sequence="5"
+              groups="sales_team.group_sale_manager"/>
+</odoo>

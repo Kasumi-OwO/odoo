@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+factory_followup_manager,Factory follow-ups: manager,factory.crm.followup,sales_team.group_sale_manager,crud,
+factory_followup_all_leads,Factory follow-ups: all leads,factory.crm.followup,sales_team.group_sale_salesman_all_leads,cru,
+factory_followup_personal,Factory follow-ups: own leads,factory.crm.followup,sales_team.group_sale_salesman,cru,"['|',('lead_id.user_id','=',user.id),('lead_id.user_id','=',False)]"
+factory_followup_company,Factory follow-ups: company,factory.crm.followup,,crud,"[('company_id','in',company_ids + [False])]"
