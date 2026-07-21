@@ -68,6 +68,29 @@ class TestFactoryCrmFollowup(TransactionCase):
         with self.assertRaises(UniqueViolation), self.cr.savepoint():
             legacy.copy({"legacy_import_key": "wutong-2"})
 
+    def test_factory_customer_creates_one_active_reactivation_opportunity(self):
+        partner = self.env["res.partner"].create(
+            {
+                "name": "Historical Buyer",
+                "phone": "13800000002",
+                "is_factory_customer": True,
+                "legacy_import_key": "wutong-partner-2",
+                "legacy_purchase_count": 3,
+                "legacy_total_purchase_amount": 999,
+                "customer_type": "ecommerce",
+            }
+        )
+        action = partner.with_user(self.sales_user).action_create_reactivation_opportunity()
+        opportunity = self.env["crm.lead"].browse(action["res_id"])
+        self.assertEqual(opportunity.partner_id, partner)
+        self.assertEqual(opportunity.type, "opportunity")
+        self.assertTrue(opportunity.is_reactivation_opportunity)
+        self.assertTrue(opportunity.is_repeat_customer)
+        self.assertEqual(opportunity.user_id, self.sales_user)
+        self.assertEqual(len(opportunity.activity_ids), 1)
+        second_action = partner.with_user(self.sales_user).action_create_reactivation_opportunity()
+        self.assertEqual(second_action["res_id"], opportunity.id)
+
     def test_followup_trace_updates_lead(self):
         today = fields.Date.context_today(self.lead)
         self.env["factory.crm.followup"].create(

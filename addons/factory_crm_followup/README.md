@@ -40,14 +40,33 @@ Convert the XLSX locally, then run the generated CSV through an Odoo shell:
 
 ```bash
 python addons/factory_crm_followup/scripts/prepare_legacy_customers.py SOURCE.xlsx customers.csv
-LEGACY_CRM_CSV=/absolute/path/customers.csv \
-  python odoo-bin shell -c odoo.conf -d DATABASE \
-  < addons/factory_crm_followup/scripts/import_legacy_customers.py
+LEGACY_CRM_CSV=/absolute/path/customers.csv python odoo-bin shell -c odoo.conf -d DATABASE < addons/factory_crm_followup/scripts/import_legacy_customers.py
 ```
 
 The importer preserves duplicate names, duplicate phone numbers and contradictory
 purchase dates exactly as exported. It maps nickname, phone and city to the live
 CRM search fields without merging source rows.
+
+After the import, create customer master records and archive the source-only leads:
+
+```bash
+python odoo-bin shell -c odoo.conf -d DATABASE < addons/factory_crm_followup/scripts/migrate_legacy_leads_to_partners.py
+```
+
+## Salesperson quick start
+
+1. Open **CRM > Sales > Factory Customers**.
+2. Use **Unassigned Customers**, buyer level, province, purchase count and amount
+   to select a workable customer group.
+3. Set the salesperson on the customer record.
+4. Review the historical purchase page and click **Create / Open Reactivation
+   Opportunity**. The opportunity is assigned to the current salesperson and a
+   same-day initial-call activity is created automatically.
+5. Work from **My Activities** and **My Pipeline**. Record every conversation in
+   the follow-up page and set the next follow-up date.
+6. Move the opportunity through contact, requirement, quote, sample and won/lost
+   stages. A second click on the customer does not create a duplicate active
+   reactivation opportunity.
 
 ## Intentional first-version limits
 

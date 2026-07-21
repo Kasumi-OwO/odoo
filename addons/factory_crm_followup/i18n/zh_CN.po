@@ -651,3 +651,67 @@ msgstr "跟进方式"
 #. module: factory_crm_followup
 msgid "Buyer Demand"
 msgstr "买家需求"
+
+#. module: factory_crm_followup
+msgid "Factory Customer"
+msgstr "工厂客户"
+
+#. module: factory_crm_followup
+msgid "Factory Customers"
+msgstr "工厂客户"
+
+#. module: factory_crm_followup
+msgid "Create / Open Reactivation Opportunity"
+msgstr "创建/打开复购商机"
+
+#. module: factory_crm_followup
+msgid "Sales Profile"
+msgstr "销售资料"
+
+#. module: factory_crm_followup
+msgid "Purchase Requirement"
+msgstr "采购需求"
+
+#. module: factory_crm_followup
+msgid "Historical Buyer Information"
+msgstr "历史买家信息"
+
+#. module: factory_crm_followup
+msgid "Historical Purchase Summary"
+msgstr "历史采购汇总"
+
+#. module: factory_crm_followup
+msgid "Historical Purchase Currency"
+msgstr "历史采购币种"
+
+#. module: factory_crm_followup
+msgid "My Customers"
+msgstr "我的客户"
+
+#. module: factory_crm_followup
+msgid "Unassigned Customers"
+msgstr "未分配客户"
+
+#. module: factory_crm_followup
+msgid "Search Factory Customers"
+msgstr "搜索工厂客户"
+
+#. module: factory_crm_followup
+msgid "Create a factory customer"
+msgstr "创建工厂客户"
+
+#. module: factory_crm_followup
+msgid "Assign a salesperson, review purchase history, then create a reactivation opportunity."
+msgstr "分配业务员、查看采购历史，然后创建复购商机。"
+
+#. module: factory_crm_followup
+msgid "Reactivation Opportunity"
+msgstr "复购商机"
+
+#. module: factory_crm_followup
+msgid "Reactivation - %s"
+msgstr "复购 - %s"
+
+#. module: factory_crm_followup
+msgid "Initial customer reactivation call"
+msgstr "首次客户复购回访"

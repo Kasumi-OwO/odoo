@@ -17,12 +17,12 @@
                 <page name="factory_customer_profile" string="Factory Customer Profile">
                     <group>
                         <group string="Required Customer Information">
-                            <field name="partner_name" string="Customer Name" required="1"/>
-                            <field name="contact_name" required="1"/>
-                            <field name="phone" required="1" widget="phone"/>
-                            <field name="wechat" required="1"/>
-                            <field name="factory_source" required="1"/>
-                            <field name="customer_type" required="1"/>
+                            <field name="partner_name" string="Customer Name"/>
+                            <field name="contact_name"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="wechat"/>
+                            <field name="factory_source"/>
+                            <field name="customer_type"/>
                             <field name="profile_complete" readonly="1"/>
                         </group>
                         <group string="Purchase Profile">

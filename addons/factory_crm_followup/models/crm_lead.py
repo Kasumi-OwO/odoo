@@ -100,6 +100,9 @@ class CrmLead(models.Model):
     sample_tracking_number = fields.Char(string="Sample Tracking Number", tracking=True)
     sample_converted = fields.Boolean(string="Sample Converted", tracking=True)
     is_repeat_customer = fields.Boolean(string="Repeat Customer", tracking=True)
+    is_reactivation_opportunity = fields.Boolean(
+        string="Reactivation Opportunity", index=True, copy=False
+    )
     validity_rate = fields.Float(
         string="Valid Lead Rate", compute="_compute_dashboard_indicators", store=True, aggregator="avg"
     )
