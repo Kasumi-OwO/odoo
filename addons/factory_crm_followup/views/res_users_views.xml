@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_users_view_form_no_email_auth" model="ir.ui.view">
+        <field name="name">res.users.form.no.email.auth</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="auth_signup.res_users_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_reset_password']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//widget[@name='auth_signup.button_reset_password_link']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//div[@name='auth']" position="before">
+                <div class="alert alert-info" role="alert">
+                    Email invitations and password reset are disabled. Save the internal user,
+                    then use <strong>Security → Change password</strong> to set the initial password.
+                    Phone and address are not required.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 19.5a1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-20 07:18+0000\n"
-"PO-Revision-Date: 2026-07-22 10:15+0800\n"
+"PO-Revision-Date: 2026-07-22 13:45+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -219,6 +219,7 @@ msgstr "讨论采购数量"
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__display_name
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__display_name
 #: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__display_name
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__display_name
 msgid "Display Name"
 msgstr "显示名称"
 
@@ -338,6 +339,7 @@ msgstr "高"
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__id
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__id
 #: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__id
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__id
 msgid "ID"
 msgstr "ID"
 
@@ -843,3 +845,27 @@ msgstr "已归档"
 #: model:ir.model,name:factory_crm_followup.model_res_partner
 msgid "Contact"
 msgstr "联系人"
+
+#. module: factory_crm_followup
+#. odoo-python
+#: code:addons/factory_crm_followup/models/res_users.py:0
+msgid ""
+"Email invitations and password reset are disabled. Open the user's Security "
+"tab and use Change password instead."
+msgstr "邮件邀请和密码重置已禁用。请打开该用户的“安全”页签并使用“修改密码”。"
+
+#. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_users_view_form_no_email_auth
+msgid ""
+"Email invitations and password reset are disabled. Save the internal user,\n"
+"                    then use <strong>Security → Change password</strong> to set the initial password.\n"
+"                    Phone and address are not required."
+msgstr ""
+"邮件邀请和密码重置已禁用。保存内部用户后，\n"
+"                    请使用<strong>安全 → 修改密码</strong>设置初始密码。\n"
+"                    电话和地址不是必填项。"
+
+#. module: factory_crm_followup
+#: model:ir.model,name:factory_crm_followup.model_res_users
+msgid "User"
+msgstr "用户"

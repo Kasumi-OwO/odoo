@@ -4,7 +4,7 @@ from psycopg2.errors import UniqueViolation
 
 from odoo import fields
 from odoo.addons.mail.tests.common import mail_new_test_user
-from odoo.exceptions import AccessError
+from odoo.exceptions import AccessError, UserError
 from odoo.tests import tagged
 from odoo.tests.common import TransactionCase
 
@@ -90,6 +90,34 @@ class TestFactoryCrmFollowup(TransactionCase):
         self.assertEqual(len(opportunity.activity_ids), 1)
         second_action = partner.with_user(self.sales_user).action_create_reactivation_opportunity()
         self.assertEqual(second_action["res_id"], opportunity.id)
+
+    def test_internal_user_uses_manual_password_without_email(self):
+        mail_count = self.env["mail.mail"].search_count([])
+        user = self.env["res.users"].create(
+            {
+                "name": "No Email Salesperson",
+                "login": "no-email-salesperson@example.com",
+                "email": "no-email-salesperson@example.com",
+                "group_ids": [(6, 0, [self.env.ref("sales_team.group_sale_salesman").id])],
+            }
+        )
+        self.assertFalse(user.share)
+        self.assertEqual(user.notification_type, "inbox")
+        self.assertFalse(user.partner_id.signup_type)
+        self.assertEqual(self.env["mail.mail"].search_count([]), mail_count)
+        with self.assertRaises(UserError):
+            user.action_reset_password()
+
+        user.password = "Temporary-Password-123"
+        auth_info = self.env["res.users"].authenticate(
+            {
+                "type": "password",
+                "login": user.login,
+                "password": "Temporary-Password-123",
+            },
+            {"interactive": True},
+        )
+        self.assertEqual(auth_info["uid"], user.id)
 
     def test_followup_trace_updates_lead(self):
         today = fields.Date.context_today(self.lead)

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function model="ir.config_parameter" name="set_bool"
+              eval="('factory_crm_followup.no_email_user_management', True)"/>
+    <function model="ir.config_parameter" name="set_bool"
+              eval="('auth_signup.reset_password', False)"/>
+    <function model="ir.config_parameter" name="set_str"
+              eval="('auth_signup.invitation_scope', 'b2b')"/>
+</odoo>
