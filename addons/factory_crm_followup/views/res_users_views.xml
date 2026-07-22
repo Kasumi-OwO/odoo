@@ -20,4 +20,23 @@
             </xpath>
         </field>
     </record>
+
+    <record id="res_users_identitycheck_view_no_email_auth" model="ir.ui.view">
+        <field name="name">res.users.identitycheck.no.email.auth</field>
+        <field name="model">res.users.identitycheck</field>
+        <field name="inherit_id" ref="base.res_users_identitycheck_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h3" position="replace">
+                <h3>
+                    <strong>
+                        Enter the current administrator's own login password to confirm your identity.
+                        This is not the target user's old password.
+                    </strong>
+                </h3>
+            </xpath>
+            <xpath expr="//a[@href='/web/reset_password/']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
 </odoo>

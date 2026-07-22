@@ -17,6 +17,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_users_identitycheck_view_no_email_auth
+msgid ""
+"<strong>\n"
+"                        Enter the current administrator's own login password to confirm your identity.\n"
+"                        This is not the target user's old password.\n"
+"                    </strong>"
+msgstr ""
+"<strong>\n"
+"                        请输入当前管理员自己的登录密码以确认身份。\n"
+"                        这不是目标用户的旧密码。\n"
+"                    </strong>"
+
+#. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__1688
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__1688
 msgid "1688 Inquiry"
