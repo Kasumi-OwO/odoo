@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 19.5a1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-20 07:18+0000\n"
-"PO-Revision-Date: 2026-07-20 07:18+0000\n"
+"PO-Revision-Date: 2026-07-22 10:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -18,6 +18,7 @@ msgstr ""
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__1688
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__1688
 msgid "1688 Inquiry"
 msgstr "1688询盘"
 
@@ -30,6 +31,7 @@ msgstr "A类 - 高意向"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__ai
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__ai
 msgid "AI Prospecting"
 msgstr "AI拓客"
 
@@ -91,12 +93,12 @@ msgstr "沟通日期"
 #. module: factory_crm_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.factory_crm_followup_view_search
 msgid "Communication Week"
-msgstr ""
+msgstr "沟通周"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__company_id
 msgid "Company"
-msgstr ""
+msgstr "公司"
 
 #. module: factory_crm_followup
 #. odoo-python
@@ -108,25 +110,27 @@ msgstr "完善新客户资料"
 #. odoo-python
 #: code:addons/factory_crm_followup/models/crm_lead.py:0
 msgid "Contact this customer for the scheduled repurchase visit."
-msgstr ""
+msgstr "按计划联系该客户进行复购回访。"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__conversion_rate
 msgid "Conversion Rate"
-msgstr ""
+msgstr "转化率"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "创建人"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__create_date
 msgid "Created on"
-msgstr ""
+msgstr "创建时间"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__current_supplier
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__current_supplier
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__current_supplier
 msgid "Current Supplier"
 msgstr "当前合作供应商"
 
@@ -142,13 +146,15 @@ msgstr "客户顾虑"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__customer_concerns
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__customer_concerns
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__customer_concerns
 msgid "Customer Concerns"
 msgstr "客户顾虑"
 
 #. module: factory_crm_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.factory_crm_followup_view_form
 msgid "Customer Follow-up"
-msgstr ""
+msgstr "客户跟进"
 
 #. module: factory_crm_followup
 #: model:ir.actions.act_window,name:factory_crm_followup.factory_crm_followup_action
@@ -178,6 +184,8 @@ msgstr "客户名称"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__customer_type
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__customer_type
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__customer_type
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_search_factory_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_opportunity_search_factory_followup
 msgid "Customer Type"
@@ -210,6 +218,7 @@ msgstr "讨论采购数量"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__display_name
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__display_name
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__display_name
 msgid "Display Name"
 msgstr "显示名称"
 
@@ -231,33 +240,38 @@ msgstr "沉睡起始日期"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__customer_type__ecommerce
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__customer_type__ecommerce
 msgid "E-commerce Seller"
 msgstr "电商卖家"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__estimated_quantity
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__estimated_quantity
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__estimated_quantity
 msgid "Estimated Purchase Quantity"
 msgstr "预估采购量"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__exhibition
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__exhibition
 msgid "Exhibition"
 msgstr "展会"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__referral
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__referral
 msgid "Existing Customer Referral"
 msgstr "老客介绍"
 
 #. module: factory_crm_followup
 #: model:ir.model,name:factory_crm_followup.model_factory_crm_followup
 msgid "Factory CRM Follow-up Record"
-msgstr ""
+msgstr "工厂 CRM 跟进记录"
 
 #. module: factory_crm_followup
 #: model:ir.actions.server,name:factory_crm_followup.ir_cron_refresh_factory_followups_ir_actions_server
 msgid "Factory CRM: Follow-up and Dormancy Check"
-msgstr ""
+msgstr "工厂 CRM：跟进与沉睡客户检查"
 
 #. module: factory_crm_followup
 #: model:ir.actions.act_window,name:factory_crm_followup.factory_crm_lead_analysis_action
@@ -274,6 +288,8 @@ msgstr "工厂客户画像"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__factory_source
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__factory_source
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__factory_source
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_search_factory_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_opportunity_search_factory_followup
 msgid "Factory Lead Source"
@@ -305,10 +321,11 @@ msgstr "跟进记录"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__followup_count
 msgid "Followup Count"
-msgstr ""
+msgstr "跟进次数"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__customer_type__gift
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__customer_type__gift
 msgid "Gift Company"
 msgstr "礼品公司"
 
@@ -320,8 +337,9 @@ msgstr "高"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__id
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__id
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: factory_crm_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_search_factory_followup
@@ -331,6 +349,7 @@ msgstr "资料不完整"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__customer_type__individual
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__customer_type__individual
 msgid "Individual Retail"
 msgstr "个人散户"
 
@@ -362,12 +381,12 @@ msgstr "最后跟进日期"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最后更新人"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最后更新时间"
 
 #. module: factory_crm_followup
 #: model:ir.model,name:factory_crm_followup.model_crm_lead
@@ -377,7 +396,7 @@ msgstr "线索"
 #. module: factory_crm_followup
 #: model:ir.model.fields,help:factory_crm_followup.field_crm_lead__manual_grade
 msgid "Leave empty to use the grade calculated from customer signals."
-msgstr ""
+msgstr "留空则使用根据客户信号自动计算的等级。"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__factory_crm_followup__customer_intent__low
@@ -401,6 +420,8 @@ msgstr "我的跟进"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__logo_customization
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__logo_customization
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__logo_customization
 msgid "Needs Logo Customization"
 msgstr "需要LOGO定制"
 
@@ -437,11 +458,13 @@ msgstr "仅比价"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__factory_source__other
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__factory_source__other
 msgid "Other"
 msgstr "其他"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__customer_type__wholesaler
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__customer_type__wholesaler
 msgid "Outdoor Wholesaler"
 msgstr "户外批发商"
 
@@ -452,6 +475,8 @@ msgstr "资料完整"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__purchase_cycle
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__purchase_cycle
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__purchase_cycle
 msgid "Purchase Cycle"
 msgstr "采购周期"
 
@@ -482,8 +507,9 @@ msgstr "复购客户"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__repeat_customer_count
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Repeat Customers"
-msgstr ""
+msgstr "复购客户"
 
 #. module: factory_crm_followup
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_view_form_factory_followup
@@ -493,13 +519,14 @@ msgstr "客户必填信息"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_factory_crm_followup__user_id
 #: model_terms:ir.ui.view,arch_db:factory_crm_followup.factory_crm_followup_view_search
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Salesperson"
 msgstr "销售员"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__sample_conversion_rate
 msgid "Sample Conversion Rate"
-msgstr ""
+msgstr "样品转化率"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__sample_converted
@@ -525,10 +552,11 @@ msgstr "样品与客户状态"
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__sample_sent_count
 msgid "Samples Sent"
-msgstr ""
+msgstr "已寄样数量"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields.selection,name:factory_crm_followup.selection__crm_lead__customer_type__project
+#: model:ir.model.fields.selection,name:factory_crm_followup.selection__res_partner__customer_type__project
 msgid "Scenic Area / Project"
 msgstr "景区工程"
 
@@ -536,21 +564,23 @@ msgstr "景区工程"
 #. odoo-python
 #: code:addons/factory_crm_followup/models/crm_lead.py:0
 msgid "The customer profile has been incomplete for at least 3 days."
-msgstr ""
+msgstr "该客户资料已至少 3 天未完善。"
 
 #. module: factory_crm_followup
 #. odoo-python
 #: code:addons/factory_crm_followup/models/crm_lead.py:0
 msgid "This %(grade)s-grade customer has not been followed up on time."
-msgstr ""
+msgstr "该 %(grade)s 类客户未按时跟进。"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__validity_rate
 msgid "Valid Lead Rate"
-msgstr ""
+msgstr "有效线索率"
 
 #. module: factory_crm_followup
 #: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__wechat
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__wechat
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__wechat
 msgid "WeChat"
 msgstr "微信"
 
@@ -565,153 +595,251 @@ msgid "Won"
 msgstr "已成交"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_view_form_factory_followup
 msgid "Historical Purchase Data"
 msgstr "历史采购数据"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_view_form_factory_followup
 msgid "Buyer Information"
 msgstr "买家信息"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_view_form_factory_followup
 msgid "Purchase Summary"
 msgstr "采购汇总"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.crm_lead_view_form_factory_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Legacy Follow-up Information"
 msgstr "原系统跟进信息"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_import_key
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_import_key
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_import_key
 msgid "Legacy Import Key"
 msgstr "历史数据导入标识"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_buyer_nickname
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_buyer_nickname
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_buyer_nickname
 msgid "Buyer Nickname"
 msgstr "买家昵称"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_shipping_phone
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_shipping_phone
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_shipping_phone
 msgid "Shipping Address Phone"
 msgstr "收货地址电话"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_buyer_identity
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_buyer_identity
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_buyer_identity
 msgid "Buyer Identity"
 msgstr "买家身份"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_buyer_level
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_buyer_level
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_buyer_level
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Buyer Level"
 msgstr "买家等级"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_province
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_province
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_province
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Province"
 msgstr "所在地-省份"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_city
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_city
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_city
 msgid "Legacy City"
 msgstr "所在地-城市"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_first_purchase_date
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_first_purchase_date
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_first_purchase_date
 msgid "First Purchase Date"
 msgstr "首次采购日期"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_latest_purchase_date
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_latest_purchase_date
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_latest_purchase_date
 msgid "Latest Purchase Date"
 msgstr "最近采购日期"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_days_since_purchase
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_days_since_purchase
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_days_since_purchase
 msgid "Days Since Last Purchase"
 msgstr "距上次采购（天）"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_purchase_count
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_purchase_count
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_purchase_count
 msgid "Purchase Count"
 msgstr "采购次数"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_total_purchase_amount
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_total_purchase_amount
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_total_purchase_amount
 msgid "Cumulative Purchase Amount"
 msgstr "累计采购金额（元）"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_first_order_ad_driven
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_first_order_ad_driven
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_first_order_ad_driven
 msgid "First Order Ad-driven"
 msgstr "首单是否广告引导"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_contact_name
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_contact_name
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_contact_name
 msgid "Legacy Contact Name"
 msgstr "联系名称"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_contact_details
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_contact_details
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_contact_details
 msgid "Legacy Contact Details"
 msgstr "联系方式"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_importance_level
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_importance_level
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_importance_level
 msgid "Importance Level"
 msgstr "重要等级"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_followup_method
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_followup_method
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_followup_method
 msgid "Follow-up Method"
 msgstr "跟进方式"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__legacy_buyer_demand
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__legacy_buyer_demand
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__legacy_buyer_demand
 msgid "Buyer Demand"
 msgstr "买家需求"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__is_factory_customer
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__is_factory_customer
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Factory Customer"
 msgstr "工厂客户"
 
 #. module: factory_crm_followup
+#: model:ir.actions.act_window,name:factory_crm_followup.factory_customer_action
+#: model:ir.ui.menu,name:factory_crm_followup.factory_customer_menu
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Factory Customers"
 msgstr "工厂客户"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Create / Open Reactivation Opportunity"
 msgstr "创建/打开复购商机"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Sales Profile"
 msgstr "销售资料"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Purchase Requirement"
 msgstr "采购需求"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Historical Buyer Information"
 msgstr "历史买家信息"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_form_factory_customer
 msgid "Historical Purchase Summary"
 msgstr "历史采购汇总"
 
 #. module: factory_crm_followup
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_partner__factory_currency_id
+#: model:ir.model.fields,field_description:factory_crm_followup.field_res_users__factory_currency_id
 msgid "Historical Purchase Currency"
 msgstr "历史采购币种"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "My Customers"
 msgstr "我的客户"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Unassigned Customers"
 msgstr "未分配客户"
 
 #. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
 msgid "Search Factory Customers"
 msgstr "搜索工厂客户"
 
 #. module: factory_crm_followup
+#: model_terms:ir.actions.act_window,help:factory_crm_followup.factory_customer_action
 msgid "Create a factory customer"
 msgstr "创建工厂客户"
 
 #. module: factory_crm_followup
-msgid "Assign a salesperson, review purchase history, then create a reactivation opportunity."
+#: model_terms:ir.actions.act_window,help:factory_crm_followup.factory_customer_action
+msgid ""
+"Assign a salesperson, review purchase history, then create a reactivation "
+"opportunity."
 msgstr "分配业务员、查看采购历史，然后创建复购商机。"
 
 #. module: factory_crm_followup
+#. odoo-python
+#: code:addons/factory_crm_followup/models/res_partner.py:0
+#: model:ir.model.fields,field_description:factory_crm_followup.field_crm_lead__is_reactivation_opportunity
 msgid "Reactivation Opportunity"
 msgstr "复购商机"
 
 #. module: factory_crm_followup
+#. odoo-python
+#: code:addons/factory_crm_followup/models/res_partner.py:0
 msgid "Reactivation - %s"
 msgstr "复购 - %s"
 
 #. module: factory_crm_followup
+#. odoo-python
+#: code:addons/factory_crm_followup/models/res_partner.py:0
 msgid "Initial customer reactivation call"
 msgstr "首次客户复购回访"
+
+#. module: factory_crm_followup
+#: model_terms:ir.ui.view,arch_db:factory_crm_followup.res_partner_view_search_factory_customer
+msgid "Archived"
+msgstr "已归档"
+
+#. module: factory_crm_followup
+#: model:ir.model,name:factory_crm_followup.model_res_partner
+msgid "Contact"
+msgstr "联系人"

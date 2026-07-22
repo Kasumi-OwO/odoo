@@ -55,6 +55,8 @@ python odoo-bin shell -c odoo.conf -d DATABASE < addons/factory_crm_followup/scr
 
 ## Salesperson quick start
 
+Chinese operating guide: [业务员使用手册](docs/业务员使用手册.md).
+
 1. Open **CRM > Sales > Factory Customers**.
 2. Use **Unassigned Customers**, buyer level, province, purchase count and amount
    to select a workable customer group.
